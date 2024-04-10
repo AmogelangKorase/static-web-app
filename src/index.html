@@ -16,7 +16,7 @@
 
     <script>
     (async function() {
-        const { text } = await( await fetch(`/api/addap1/index.js`)).json();
+        const { text } = await( await fetch(`/api/addap1`)).json();
         document.querySelector('#name').textContent = text;
     }());
     </script>
