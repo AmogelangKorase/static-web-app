@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carList = document.getElementById('carList');
     cars = [];
     loadCarsBtn.addEventListener('click', () => {
-        fetch('/api/load')
+        fetch('/api/get/apis/load')
             .then(response => response.json())
             .then(data => {
                 cars = data;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addCar(newCar) {
-    fetch('/api/add', {
+    fetch('/api/get/apis/add', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ carForm.addEventListener('submit', event => {
 
 // Function to remove a car
 function removeCar(index) {
-    fetch(`/api/remove/${index}`, {
+    fetch(`/api/get/apis/remove/${index}`, {
         method: 'DELETE'
     })
         .then(response => response.json())
