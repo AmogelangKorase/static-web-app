@@ -4,22 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Vanilla JavaScript App</title>
+    <title>Lucky-Lot Cars</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+    <header>
+        <div class="container">
+            <h1>Lucky-Lot Cars</h1>
+        </div>
+    </header>
     <main>
-    <h1>Vanilla JavaScript App</h1>
-    <p>Loading content from the API: <b id="name">...</b></p>
+        <div class="container">
+            <button id="loadCarsBtn" class="btn">Load Cars</button>
+            <div id="carList" class="grid-container"></div>
+        </div>
+        <!-- add new car -->
+        <div class="container">
+            <form id="carForm">
+                <input type="text" id="make" placeholder="Make" required>
+                <input type="text" id="model" placeholder="Model" required>
+                <input type="number" id="year" placeholder="Year" required>
+                <input type="number" id="price" placeholder="Price" required>
+                <button type="submit">Add Car</button>
+            </form>
+        </div>
     </main>
+    <footer>
+        <p>&copy; 2024 Lucky-Lot Cars</p>
+    </footer>
 
-    <script>
-    (async function() {
-        const { text } = await( await fetch(`/api/addap1`)).json();
-        document.querySelector('#name').textContent = text;
-    }());
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
