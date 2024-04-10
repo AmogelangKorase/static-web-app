@@ -4,7 +4,7 @@ const path = require('path');
 
 const filePath = path.resolve(__dirname, '../cars.json'); // Create a path to the cars.json file
 
-app.http('addCar', {
+app.http('add', {
     methods: ['POST'], // Listen for POST requests
     authLevel: 'anonymous',
     handler: async (request, context) => {

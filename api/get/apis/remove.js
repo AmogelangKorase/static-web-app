@@ -4,10 +4,10 @@ const path = require('path');
 
 const filePath = path.resolve(__dirname, '../cars.json'); // Create a path to the cars.json file
 
-app.http('removeCar', {
+app.http('remove', {
     methods: ['DELETE'],
     authLevel: 'anonymous',
-    route: 'removeCar/{carId}', // Define a route parameter named carId
+    route: 'remove/{carId}', // Define a route parameter named carId
     handler: async (request, context) => {
         try {
             const index = request.params.carId;
